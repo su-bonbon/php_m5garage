@@ -1,24 +1,47 @@
 <?php
-    $id = $_POST['id'];
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+    $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $conn = new mysqli('localhost', 'root','','test');
-    if($conn->connect_error){
+    $conn = new mysqli('localhost', 'root', '', 'cs4347');
+    if($conn->connect_error) {
+        echo "<h2>Connection failed</h2>";  // Added semicolon and corrected message
         die('Connection Failed : '.$conn->connect_error);
-    }else{
-        $stmt = $conn->prepare("select * from Employee where id = ?");
-        $stmt->bind-param("s", $id);
+    } else {
+        // Prepare the SQL statement
+        $stmt = $conn->prepare("SELECT * FROM Employee WHERE email = ?");
+        $stmt->bind_param("s", $email);  // Bind the parameter $email to the placeholder
+
+        // Execute the prepared statement
         $stmt->execute();
+
+        // Get the result set from the prepared statement
         $stmt_result = $stmt->get_result();
-        if(get_result->num_rows > 0) {
+
+        // Check if there is at least one row returned
+        if($stmt_result->num_rows > 0) {
+            // Fetch the data from the result set
             $data = $stmt_result->fetch_assoc();
-            if($data['password'] === $password) {
-                echo "<h2>incorrect password</h2>"  // localhost/connection.php will direct you to diff page
-            } else {
-                echo "<h2>incorrect id or password</h2>"
+
+            // Verify the password - You should use a secure way to store and compare passwords
+            // For simplicity here, assuming plaintext comparison (not recommended for production)
+            if($data['employeeID'] === (int)$password) {
+                //echo "<h2>Login successful</h2>";  // Corrected message
+                // Redirect to another page or perform other actions
+                header("Location: home.html");
+            } else {                
+                header("Location: relogin.html");
             }
         } else {
-            echo "<h2>failed to login</h2>"
+            header("Location: relogin.html");
+            //echo "<h2>Incorrect id or failed to login</h2>";  // Corrected message
         }
     }
-?>
+?>    
+<script>
+    // JavaScript code to show alert after redirect
+    alert("Incorrect password...");
+</script>
