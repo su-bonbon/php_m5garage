@@ -49,7 +49,7 @@
 
     
 
-    <div class="container my-4 inventory">
+    <div class="container my-4" >
     <table class="table">
     <thead>
       <tr>
