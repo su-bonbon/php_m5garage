@@ -1,3 +1,10 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
 .aboutus {
     background-image: url('img/car4.jpg');
     /* Replace 'path/to/your/image.jpg' with the actual path to your image */
@@ -52,7 +59,7 @@
 /*contact*/
 
 .contact {
-    background-image: url('img/car11.jpg');
+    background-image: url('img/car31.jpg');
     /* Replace 'path/to/your/image.jpg' with the actual path to your image */
     background-size: cover;
     /* Ensures the image covers the entire background */
@@ -176,8 +183,63 @@
   login
   */
 .signinform {
-
 }
 .warning {
     color: red;
+}
+.welcome {
+    color: green;
+}
+
+/*update car
+
+    background-image: url('img/car4.jpg');
+*/
+.btn-black {
+    background-color: #000000;
+    color: white;
+}
+.updatecarcard {
+    
+}
+
+.updatecar{
+    background-size: cover;
+    background-image: url('img/car4.jpg');
+}
+.carcard {
+    padding: 10%;
+    background-color: rgba(255, 255, 255, 0.777);
+    border-radius: 10%;
+    border-color: transparent;
+}
+
+/*create car
+
+*/
+.createcar {
+}
+
+.createcarform{
+
+}
+.try-red {
+    color: red;;
+}
+
+/*updatepayment
+
+*/
+.updatepayment{
+    background-size: cover;
+    background-image: url('img/car39.jpg');
+}
+.createpayment {
+    margin-top: 150px;
+
+    padding-top: 3em;;
+}
+
+.inventory-container{
+    background-image: url('img/car41.jpg');
 }

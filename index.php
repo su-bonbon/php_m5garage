@@ -8,40 +8,62 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>M5Garage</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.php">PHP CRUD OPERATION</a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-            </li>
-            <li class="nav-item">
-              <a type="button" class="btn btn-primary nav-link active" href="create.php">Add New</a>
-            </li>
-          </ul>
+    
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- Logo on the left -->
+            <a class="navbar-brand" href="main.php">
+                <img src="img/logo.png" class="img-fluid logo-image" alt="Logo" style="max-width: 200px; height: auto;">
+            </a>
+
+            <!-- Navbar toggler button for responsive -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar after log-in links aligned to the right -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link"  href="inventory.php">Inventory</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="create.html">Create</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="payment.html">Payment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Sign Out</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
+
+
+
+
     <div class="container my-4">
     <table class="table">
     <thead>
       <tr>
-        <th>ID</th>
-        <th>NAME</th>
-        <th>EMAIL</th>
-        <th>PHONE</th>
-        <th>JOINING DATE</th>
+        <th>VIN</th>
+        <th>MAKE</th>
+        <th>MODEL</th>
+        <th>YEAR</th>
         <th>ACTIONS</th>
       </tr>
     </thead>
     <tbody>
       <?php
         include "connection.php";
-        $sql = "select * from crud2";
+        $sql = "select * from Car";
         $result = $conn->query($sql);
         if(!$result){
           die("Invalid query!");
@@ -49,15 +71,14 @@
         while($row=$result->fetch_assoc()){
           echo "
       <tr>
-        <th>$row[id]</th>
-        <td>$row[name]</td>
-        <td>$row[email]</td>
-        <td>$row[phone]</td>
-        <td>$row[join_date]</td>
+        <th>$row[vinNum]</th>
+        <td>$row[make]</td>
+        <td>$row[model]</td>
+        <td>$row[year]</td>
         <td>
-                  <a class='btn btn-success' href='edit.php?id=$row[id]'>Edit</a>
-                  <a class='btn btn-danger' href='delete.php?id=$row[id]'>Delete</a>
-                </td>
+          <a class='btn btn-success' href='editCar.php?id=$row[id]'>Edit</a>
+          <a class='btn btn-danger' href='deleteCar.php?id=$row[id]'>Delete</a>
+        </td>
       </tr>
       ";
         }

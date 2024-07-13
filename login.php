@@ -1,8 +1,5 @@
 <?php
-
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
+    session_start(); // Start the session
     $email = $_POST['email'];
     $password = $_POST['password'];
 
@@ -31,7 +28,8 @@ ini_set('display_errors', 1);
             if($data['employeeID'] === (int)$password) {
                 //echo "<h2>Login successful</h2>";  // Corrected message
                 // Redirect to another page or perform other actions
-                header("Location: home.html");
+                $_SESSION['fname'] = $data['fname'];
+                header("Location: main.php");
             } else {                
                 header("Location: relogin.html");
             }
@@ -41,7 +39,3 @@ ini_set('display_errors', 1);
         }
     }
 ?>    
-<script>
-    // JavaScript code to show alert after redirect
-    alert("Incorrect password...");
-</script>
