@@ -16,17 +16,18 @@ html, body {
     /* Adjust padding as needed */
     color: #fcfcfc;
     /* Ensures text is visible against the background */
+    padding-top: 100px;
 }
 
 /* Additional styling for better readability */
 .about-text {
     border-radius: 50px;
-    padding: 3em;
+    padding: 4em;
     max-width: 800px;
     /* Adjust the max-width as per your design */
-    margin: 0 auto;
+    margin: auto;
     /* Centers the content horizontally */
-    background-color: rgba(0, 0, 0, 0.606);
+    background-color: rgba(0, 0, 0, 0.801);
 }
 
 .about-text h2 {
