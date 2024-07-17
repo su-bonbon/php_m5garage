@@ -65,11 +65,10 @@ $conn->close();
  <title>M5Garage</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">  <link rel="stylesheet" href="styles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -107,14 +106,24 @@ $conn->close();
 </nav>
 
 
+
+
 <div class="edituser w-100 h-100">
+    <br>
+    <div class="btn-group assiddl">
+        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Assignment #6 (SQL Injection)
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="edituser1.php">1. Vulnerable (POST)</a></li>
+            <li><a class="dropdown-item" href="edituser2.php">2. Vulnerable (UPDATE)</a></li>
+            <li><a class="dropdown-item" href="edituser3.php">3. Prevent SQL Injection</a></li>
+        </ul>
+    </div>
 <div class="col-lg-6 m-auto updatecarcard">
- 
-
-
 
 <form method="post">
-    <br><br>
+    <br>
     <div class="card carcard">
         <div class="card-header">
             <h1 class="text-black text-center">Update User</h1>

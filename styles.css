@@ -250,3 +250,9 @@ html, body {
     background-size: cover;
     background-image: url('img/car42.jpg');
 }
+
+.assiddl {
+    background-color: white; 
+    border-radius: 0.5rem; 
+    padding: 10px;
+}
