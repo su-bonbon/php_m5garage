@@ -245,3 +245,8 @@ html, body {
     max-width: 200px; 
     height: auto;
 }
+
+.edituser{
+    background-size: cover;
+    background-image: url('img/car42.jpg');
+}

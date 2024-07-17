@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'GET') {
     
     // Use prepared statements
     $stmt = $conn->prepare("SELECT * FROM Employee WHERE employeeID = ?");
-    $stmt->bind_param("i, $employeeID);
+    $stmt->bind_param("i", $employeeID);
     $stmt->execute();
     $result = $stmt->get_result();
     
@@ -34,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'GET') {
     $stmt->close();
 } else {
     // Process the form submission
+    $employeeID = $_POST["employeeID"];
     $email = $_POST["email"];
     $fname = $_POST["fname"];
     $lname = $_POST["lname"];
@@ -117,7 +118,7 @@ $conn->close();
     <div class="card carcard">
         <div class="card-header">
             <h1 class="text-black text-center">Update User</h1>
-        </div><br>
+        </div>
 
         <input type="hidden" name="employeeID" value="<?php echo $employeeID; ?>" class="form-control"> <br>
 
@@ -133,8 +134,6 @@ $conn->close();
         <label>Phone Number:</label>
         <input type="text" name="phoneNum" value="<?php echo $phoneNum; ?>" class="form-control"> <br>
 
-
-        
         <button class="btn btn-black" type="submit" name="submit">Submit</button><br>
         <a class="btn btn-black" href="main.php">Cancel</a><br>
 
