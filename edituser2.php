@@ -113,7 +113,7 @@ $conn->close();
 <div class="edituser w-100 h-100">
     <br>
     <div class="btn-group assiddl">
-        <button class="btn btn-secondary btn-lg dropdown-toggle assibtn bg-light text-black " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Assignment #6 (SQL Injection)
         </button>
         <ul class="dropdown-menu">
@@ -128,7 +128,7 @@ $conn->close();
     <br>
     <div class="card carcard">
         <div class="card-header">
-            <h1 class="text-black text-center">Update User</h1>
+            <h1 class="text-black text-center">Update User - Vulnerable (UPDATE)</h1>
         </div>
 
         <input type="hidden" name="employeeID" value="<?php echo $employeeID; ?>" class="form-control"> <br>
