@@ -1,6 +1,7 @@
 <?php
     session_start();
     $fname = $_SESSION['fname'];
+    $employeeID = $_SESSION['employeeID'];
 ?>
 
 <html lang="en">
@@ -10,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M5 Garage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -47,6 +49,9 @@
                     </li>
                 </ul>
             </div>
+            <a class="navbar-brand" href="<?php echo 'edituser.php?employeeID=' . $_SESSION['employeeID']; ?>">
+                <i class="fa-solid fa-user-pen img-fluid logo-image usericon"></i>
+            </a>
         </div>
     </nav>
     

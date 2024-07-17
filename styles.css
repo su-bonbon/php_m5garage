@@ -240,3 +240,8 @@ html, body {
 
     padding-top: 3em;;
 }
+
+.usericon {
+    max-width: 200px; 
+    height: auto;
+}

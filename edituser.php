@@ -1,52 +1,54 @@
 <?php
 include "connection.php";
 
-
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
 if ($_SERVER["REQUEST_METHOD"] == 'GET') {
-    if (!isset($_GET['paymentID'])) {
-        header("location:payment.php");
+    if (!isset($_GET['employeeID'])) {
+        header("location:main.php");
         exit;
     }
     
-    $paymentID = $_GET['paymentID'];
+    $employeeID = $_GET['employeeID'];
     
     // Use prepared statements
-    $stmt = $conn->prepare("SELECT * FROM Payment WHERE paymentID = ?");
-    $stmt->bind_param("s", $paymentID);
+    $stmt = $conn->prepare("SELECT * FROM Employee WHERE employeeID = ?");
+    $stmt->bind_param("i, $employeeID);
     $stmt->execute();
     $result = $stmt->get_result();
     
     if ($result->num_rows === 0) {
-        header("location:inventory.php");
+        header("location:main.php");
         exit;
     }
     
     $row = $result->fetch_assoc();
-    $paymentDate = $row["paymentDate"];
-    $amount = $row["amount"];
+    $email = $row["email"];
+    $fname = $row["fname"];
+    $lname = $row["lname"];
+    $phoneNum = $row["phoneNum"];
     
     $stmt->close();
 } else {
     // Process the form submission
-    $paymentID = $_POST["paymentID"];
-    $paymentDate = $_POST["paymentDate"];
-    $amount = $_POST["amount"];
+    $email = $_POST["email"];
+    $fname = $_POST["fname"];
+    $lname = $_POST["lname"];
+    $phoneNum = $_POST["phoneNum"];
     
     // Use prepared statements for updates as well
-    $stmt = $conn->prepare("UPDATE Payment SET paymentDate = ?, amount = ? WHERE paymentID = ?");
-    $stmt->bind_param("sdi", $paymentDate, $amount, $paymentID);
+    $stmt = $conn->prepare("UPDATE Employee SET email = ?, fname = ?, lname = ?, phoneNum = ? WHERE employeeID = ?");
+    $stmt->bind_param("ssssi", $email, $fname, $lname, $phoneNum, $employeeID);
     $stmt->execute();
     
     // Check for success
     if ($stmt->affected_rows > 0) {
-        $success = "Payment updated successfully.";
+        $success = "User updated successfully.";
     } else {
-        $error = "Error updating Payment.";
+        $error = "Error updating User.";
     }
     
     $stmt->close();
@@ -104,7 +106,7 @@ $conn->close();
 </nav>
 
 
-<div class="updatepayment w-100 h-100">
+<div class="edituser w-100 h-100">
 <div class="col-lg-6 m-auto updatecarcard">
  
 
@@ -114,21 +116,27 @@ $conn->close();
     <br><br>
     <div class="card carcard">
         <div class="card-header">
-            <h1 class="text-black text-center">Update Payment</h1>
+            <h1 class="text-black text-center">Update User</h1>
         </div><br>
 
-        <input type="hidden" name="paymentID" value="<?php echo $paymentID; ?>" class="form-control"> <br>
+        <input type="hidden" name="employeeID" value="<?php echo $employeeID; ?>" class="form-control"> <br>
 
-        <label>Payment Date:</label>
-        <input type="text" name="paymentDate" value="<?php echo $paymentDate; ?>" class="form-control"> <br>
+        <label>E-mail:</label>
+        <input type="email" name="email" value="<?php echo $email; ?>" class="form-control"> <br>
 
-        <label>Amount($):</label>
-        <input type="text" name="amount" value="<?php echo $amount; ?>" class="form-control"> <br>
+        <label>First Name:</label>
+        <input type="text" name="fname" value="<?php echo $fname; ?>" class="form-control"> <br>
+
+        <label>Last Name:</label>
+        <input type="text" name="lname" value="<?php echo $lname; ?>" class="form-control"> <br>
+
+        <label>Phone Number:</label>
+        <input type="text" name="phoneNum" value="<?php echo $phoneNum; ?>" class="form-control"> <br>
 
 
         
         <button class="btn btn-black" type="submit" name="submit">Submit</button><br>
-        <a class="btn btn-black" href="payment.php">Cancel</a><br>
+        <a class="btn btn-black" href="main.php">Cancel</a><br>
 
         <?php if ($success) { ?>
             <p class="text-success"><?php echo $success; ?></p>

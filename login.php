@@ -29,6 +29,7 @@
                 //echo "<h2>Login successful</h2>";  // Corrected message
                 // Redirect to another page or perform other actions
                 $_SESSION['fname'] = $data['fname'];
+                $_SESSION['employeeID'] = $data['employeeID'];
                 header("Location: main.php");
             } else {                
                 header("Location: relogin.html");
