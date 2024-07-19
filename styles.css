@@ -206,7 +206,7 @@ html, body {
 
 .updatecar{
     background-size: cover;
-    background-image: url('img/car4.jpg');
+    background-image: url('img/car41.jpg');
 }
 .carcard {
     padding: 10%;
@@ -254,4 +254,7 @@ html, body {
 .assiddl {
     display: flex;
     justify-content: center;
+}
+.assibtn {
+    border-radius: 0;
 }

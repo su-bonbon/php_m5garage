@@ -113,12 +113,12 @@ $conn->close();
 <div class="edituser w-100 h-100">
     <br>
     <div class="btn-group assiddl">
-        <button class="btn btn-secondary btn-lg dropdown-toggle assibtn bg-light text-black " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn  btn-lg dropdown-toggle assibtn bg-light text-black " type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Assignment #6 (SQL Injection)
         </button>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="<?php echo 'edituser1.php?employeeID=' . $_SESSION['employeeID']; ?>">1. Vulnerable (POST)</a></li>
-            <li><a class="dropdown-item" href="<?php echo 'edituser2.php?employeeID=' . $_SESSION['employeeID']; ?>">2. Vulnerable (UPDATE)</a></li>
+            <li><a class="dropdown-item" href="<?php echo 'edituser1.html?employeeID=' . $_SESSION['employeeID']; ?>">1. Vulnerable (SELECT)</a></li>
+            <li><a class="dropdown-item" href="<?php echo 'edituser2.html?employeeID=' . $_SESSION['employeeID']; ?>">2. Vulnerable (UPDATE)</a></li>
             <li><a class="dropdown-item" href="<?php echo 'edituser.php?employeeID=' . $_SESSION['employeeID']; ?>">3. Prevent SQL Injection</a></li>
         </ul>
     </div>
@@ -134,7 +134,7 @@ $conn->close();
         <input type="hidden" name="employeeID" value="<?php echo $employeeID; ?>" class="form-control"> <br>
 
         <label>E-mail:</label>
-        <input type="email" name="email" value="<?php echo $email; ?>" class="form-control"> <br>
+        <input type="text" name="email" value="<?php echo $email; ?>" class="form-control"> <br>
 
         <label>First Name:</label>
         <input type="text" name="fname" value="<?php echo $fname; ?>" class="form-control"> <br>
