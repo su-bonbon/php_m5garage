@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 include "connection.php";
 session_start();
 
@@ -12,7 +14,7 @@ $lname = $_POST['lname'];
 $phoneNum = $_POST['phoneNum'];
 
 // Vulnerable query (directly interpolates user inputs)
-$query = "UPDATE Employee SET email='$email', fname='$fname', lname='$lname', phoneNum='$phoneNum' WHERE employeeID=$employeeID";
+$query = "UPDATE Employee SET email=$email, fname=$fname, lname=$lname, phoneNum=$phoneNum WHERE employeeID=$employeeID";
 $result = mysqli_query($conn, $query);
 
 // Check if query was successful
