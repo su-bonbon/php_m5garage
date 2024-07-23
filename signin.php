@@ -15,7 +15,7 @@ $employeeID = $_POST['employeeID'];
 
 try {
     $stmt->execute();
-    header("Location: trylogin.php");
+    header("Location: trylogin.html");
     exit;
 } catch (mysqli_sql_exception $e) {
     $error = "Error creating car: " . $e->getMessage();

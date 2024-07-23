@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 include "connection.php";
 session_start();
-
+phpinfo();
 // Get employeeID from session
 $employeeID = $_SESSION['employeeID'];
 
@@ -13,17 +13,18 @@ $fname = $_POST['fname'];
 $lname = $_POST['lname'];
 $phoneNum = $_POST['phoneNum'];
 
-// Vulnerable query (directly interpolates user inputs)
-$query = "UPDATE Employee SET email=$email, fname=$fname, lname=$lname, phoneNum=$phoneNum WHERE employeeID=$employeeID";
+$conn->set_charset("utf8mb4"); // Add this line to set the charset
+
+$query = "UPDATE Employee SET email='$email', fname='$fname', lname='$lname', phoneNum='$phoneNum' WHERE employeeID='$employeeID'";
 $result = mysqli_query($conn, $query);
 
 // Check if query was successful
 if ($result) {
     // Output success message and redirect
-    header("Location: edituser.php?success=1");
+    echo("Injection Success.");
 } else {
     // Output failure message and redirect
-    header("Location: edituser2.html?error=1");
+    echo("Injection Failed.");
 }
 
 $conn->close();
