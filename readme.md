@@ -12,6 +12,7 @@
         👨🏼‍💻 Josh <br>
     </span>
     <h4>August 2, 2024</h4>
+    <img title="homepage" alt="homepage" src="https://h204u.s3.us-east-2.amazonaws.com/homeimg.png">
     <br>
 </div>
 
@@ -67,7 +68,7 @@ Sure! Here they are reordered in ascending order:
 <br>
 
 
-
+<!-- Target -->
 
 # 🎯 Target User 
 
@@ -83,7 +84,7 @@ logging into their account, but will not be able to access other customer inform
 
 
 
-<!-- Objectives -->
+<!-- DB Schema -->
 
 # 💡 DB Schema
 
@@ -93,6 +94,8 @@ logging into their account, but will not be able to access other customer inform
 
 <p align="right">(<a href="#wiki-top">back to top</a>)</p>
 
+<!-- EER -->
+
 # 📌 Enhanced Entity–Relationship (EER)
 
 > Mach 5 Garage's EER diagram
@@ -100,6 +103,8 @@ logging into their account, but will not be able to access other customer inform
 ![EER](https://h204u.s3.us-east-2.amazonaws.com/eer.png)
 
 <p align="right">(<a href="#wiki-top">back to top</a>)</p>
+
+<!-- Feature -->
 
 # ✨ Mach 5 Garage's Feature
 
@@ -109,6 +114,14 @@ logging into their account, but will not be able to access other customer inform
 - Optimize inventory management
 - SQL injection free
 - Scalable Database size
+
+<p align="right">(<a href="#wiki-top">back to top</a>)</p>
+
+<!-- Preview -->
+
+# 🖥️ Preview
+
+<a href="https://h204u.s3.us-east-2.amazonaws.com/M5GarageDemo.pdf">Click to see our Demo page</a>
 
 <p align="right">(<a href="#wiki-top">back to top</a>)</p>
 
