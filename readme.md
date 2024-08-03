@@ -12,8 +12,8 @@
         👨🏼‍💻 Josh <br>
     </span>
     <h4>August 2, 2024</h4>
-    <img title="homepage" alt="homepage" src="https://h204u.s3.us-east-2.amazonaws.com/homeimg.png">
-    <br>
+    
+  <br>
 </div>
 
 <!-- Summary -->
@@ -35,6 +35,7 @@ excessively long and hard to organize. Furthermore, queries would have to be ver
 assembly). Another deficiency in using Excel is the inability to perform multi-user queries. By
 utilizing a database- manufacturing data can be categorized based on the customer’s priorities of
 car performance- whether it be safety, efficiency, or high performance applications. 
+<img title="homepage" alt="homepage" src="https://h204u.s3.us-east-2.amazonaws.com/homeimg.png">
 <p align="right">(<a href="#wiki-top">back to top</a>)</p>
 <!-- PROJECT DESCRIPTION -->
 
